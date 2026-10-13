@@ -175,7 +175,8 @@ export async function POST(request: NextRequest) {
       },
     };
 
-    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:streamGenerateContent?alt=sse&key=${apiKey}`;
+    const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:streamGenerateContent?alt=sse&key=${apiKey}`;
 
     const response = await fetch(geminiUrl, {
       method: 'POST',
