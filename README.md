@@ -20,7 +20,7 @@ Welcome to the source repository for my personal portfolio website, live at **[s
 
 This website showcases my software engineering journey, full-stack web applications, Web3 & decentralized protocols, AI/LLM pipelines, and technical writings in a responsive, accessible, and high-performance design.
 
-![Portfolio Preview](/public/meta/hero.png)
+![Portfolio Preview](public/meta/hero.png)
 
 ---
 
