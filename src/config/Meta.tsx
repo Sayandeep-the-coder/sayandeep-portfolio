@@ -12,10 +12,10 @@ export interface PageMeta {
 // Base site configuration
 export const siteConfig = {
   name: heroConfig.name,
-  title: `${heroConfig.name} - Portfolio`,
-  description: `Personal portfolio of ${heroConfig.name} - Full-Stack Developer, AI & Web3 Enthusiast`,
+  title: `${heroConfig.name} | Full-Stack Developer, AI & Web3 Enthusiast`,
+  description: `${about.description}`,
   url: process.env.NEXT_PUBLIC_URL || 'https://sayandeepdev.in',
-  ogImage: '/meta/opengraph-image.png',
+  ogImage: '/meta/hero.png',
   author: {
     name: about.name,
     twitter: '@Sayandeep_005',
@@ -24,6 +24,8 @@ export const siteConfig = {
     email: 'jitsaha951@gmail.com',
   },
   keywords: [
+    'Sayandeep Saha',
+    'Sayandeep',
     'portfolio',
     'developer',
     'full-stack',
@@ -33,22 +35,27 @@ export const siteConfig = {
     'web3',
     'ai',
     'stellar',
-    'web development',
-    heroConfig.name.toLowerCase(),
+    'soroban',
+    'rag pipelines',
+    'kgec',
+    'sayandeepdev',
   ],
 };
 
 export const pageMetadata: Record<string, PageMeta> = {
   // Home page
   '/': {
-    title: `${heroConfig.name} - ${heroConfig.title}`,
-    description: `${about.description} Explore my projects, experience, and technical expertise.`,
+    title: `${heroConfig.name} | Full-Stack Developer, AI & Web3 Enthusiast`,
+    description: `${about.description} Explore my projects, journey, and technical expertise.`,
     keywords: [
+      'Sayandeep Saha',
       'portfolio',
-      'developer',
-      'full-stack',
-      'web development',
-      'projects',
+      'full-stack developer',
+      'nextjs',
+      'typescript',
+      'ai agents',
+      'web3',
+      'stellar',
     ],
     ogImage: '/meta/hero.png',
     twitterCard: 'summary_large_image',
@@ -56,144 +63,142 @@ export const pageMetadata: Record<string, PageMeta> = {
 
   // Contact page
   '/contact': {
-    title: 'Contact - Get in Touch',
+    title: `Contact | ${heroConfig.name}`,
     description:
-      "Get in touch with me for collaborations, projects, or opportunities. I'd love to hear from you!",
-    keywords: ['contact', 'hire', 'collaboration', 'freelance', 'developer'],
-    ogImage: '/assets/logo.png',
-    twitterCard: 'summary',
+      "Get in touch with Sayandeep Saha for software engineering opportunities, collaborations, or freelance projects.",
+    keywords: ['contact', 'hire', 'collaboration', 'software developer', 'sayandeep saha'],
+    ogImage: '/meta/hero.png',
+    twitterCard: 'summary_large_image',
   },
 
   // Work Experience page
   '/work-experience': {
-    title: 'Work Experience - Professional Journey',
+    title: `Work Experience | ${heroConfig.name}`,
     description:
-      'Explore my professional work experience across different companies and roles in software development.',
+      'Explore my professional work experience, technical leadership, and engineering contributions across companies and developer communities.',
     keywords: [
       'work experience',
       'career',
-      'professional',
-      'software developer',
-      'employment history',
+      'software engineer',
+      'full-stack developer',
+      'sayandeep saha',
     ],
-    ogImage: '/meta/work.png',
+    ogImage: '/meta/hero.png',
     twitterCard: 'summary_large_image',
   },
 
   // Projects page
   '/projects': {
-    title: 'Projects - My Work & Projects Portfolio',
+    title: `Projects | ${heroConfig.name}`,
     description:
-      'Discover my projects and work across different technologies and domains. From web apps to mobile solutions.',
+      'Discover full-stack web applications, AI agent systems, RAG pipelines, and decentralized Web3 protocols built by Sayandeep Saha.',
     keywords: [
       'projects',
       'portfolio',
-      'web development',
-      'applications',
-      'software',
+      'ai agents',
+      'rag benchmark',
+      'web3',
+      'stellar',
+      'soroban',
+      'sayandeep saha',
     ],
-    ogImage: '/meta/projects.png',
+    ogImage: '/meta/hero.png',
     twitterCard: 'summary_large_image',
   },
 
   // Blog page
   '/blog': {
-    title: 'Blog - Thoughts & Tutorials',
+    title: `Blog & Technical Articles | ${heroConfig.name}`,
     description:
-      'Read my thoughts, tutorials, and insights on engineering, programming, and web development.',
+      'In-depth technical articles, tutorials, and engineering writeups on modern web architecture, AI systems, and decentralized protocols.',
     keywords: [
       'blog',
       'tutorials',
-      'programming',
-      'web development',
+      'engineering blog',
       'technical writing',
+      'web development',
+      'sayandeep saha',
     ],
-    ogImage: '/meta/blogs.png',
+    ogImage: '/meta/hero.png',
     twitterCard: 'summary_large_image',
   },
 
   // Resume page
   '/resume': {
-    title: 'Resume - Professional CV',
-    description: `View and download ${heroConfig.name}'s professional resume and CV. Technical skills, experience, and qualifications.`,
+    title: `Resume & CV | ${heroConfig.name}`,
+    description: `View and download Sayandeep Saha's professional resume. Technical skill sets, engineering experience, and verified credentials.`,
     keywords: [
       'resume',
       'cv',
-      'professional',
-      'skills',
-      'qualifications',
-      'download',
+      'curriculum vitae',
+      'software engineer resume',
+      'sayandeep saha',
     ],
-    ogImage: '/meta/resume.png',
-    twitterCard: 'summary',
+    ogImage: '/meta/hero.png',
+    twitterCard: 'summary_large_image',
   },
 
   // Gears page
   '/gears': {
-    title: 'Gears - My Setup & Tools',
+    title: `Gears & Tools | ${heroConfig.name}`,
     description:
-      'Discover the tools, devices, and software I use to get my work done efficiently.',
+      'A breakdown of the hardware, developer tools, peripherals, and software stack used daily by Sayandeep Saha.',
     keywords: [
-      'setup',
-      'tools',
-      'devices',
-      'software',
+      'gears',
+      'developer setup',
+      'software tools',
       'productivity',
-      'development environment',
+      'sayandeep saha',
     ],
-    ogImage: '/meta/gears.png',
+    ogImage: '/meta/hero.png',
     twitterCard: 'summary_large_image',
   },
 
   // Setup page
   '/setup': {
-    title: 'Setup Guide - VS Code Configuration',
+    title: `Setup Guide | ${heroConfig.name}`,
     description:
-      'Complete guide to setting up VS Code with my preferred configuration, extensions, and fonts for optimal development.',
+      'Development environment configuration, VS Code setup, themes, and extensions for optimized software engineering.',
     keywords: [
-      'vscode',
-      'setup',
-      'configuration',
+      'vscode setup',
+      'developer environment',
       'extensions',
-      'development environment',
-      'guide',
+      'sayandeep saha',
     ],
-    ogImage: '/meta/setup.png',
+    ogImage: '/meta/hero.png',
     twitterCard: 'summary_large_image',
   },
 
   // Journey page
   '/journey': {
-    title: 'Journey - Learning & Engineering Timeline',
+    title: `Journey & Milestones | ${heroConfig.name}`,
     description:
-      'A chronological timeline of my academic milestones, engineering growth, Web3 protocols, and open-source contributions.',
+      'A chronological timeline of my academic milestones, engineering growth, hackathon wins, and Web3 contributions.',
     keywords: [
       'journey',
       'timeline',
       'milestones',
-      'education',
-      'developer journey',
-      'computer science',
+      'kgec',
+      'sayandeep saha',
     ],
-    ogImage: '/meta/work.png',
+    ogImage: '/meta/hero.png',
     twitterCard: 'summary_large_image',
   },
 
   // Certificates page
   '/journey/certificates': {
-    title: 'Certificates & Achievements - Verified Credentials',
+    title: `Certificates & Credentials | ${heroConfig.name}`,
     description:
-      'A curated showcase of verified certifications, hackathon achievements, and open-source fellowships.',
+      'Verified certifications, Stellar fellowship credentials, and hackathon awards achieved by Sayandeep Saha.',
     keywords: [
       'certificates',
-      'achievements',
       'credentials',
-      'awards',
-      'stellar',
+      'achievements',
       'hackathon',
-      'open source',
+      'stellar fellowship',
+      'sayandeep saha',
     ],
-    ogImage: '/meta/projects.png',
+    ogImage: '/meta/hero.png',
     twitterCard: 'summary_large_image',
   },
 };
