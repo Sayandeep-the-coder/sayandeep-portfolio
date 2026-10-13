@@ -14,7 +14,6 @@ const contactSchema = z.object({
 });
 
 function getClientIP(request: NextRequest): string {
-  // Get IP from various headers in order of preference
   const forwarded = request.headers.get('x-forwarded-for');
   const realIP = request.headers.get('x-real-ip');
   const cfConnectingIP = request.headers.get('cf-connecting-ip');
@@ -40,7 +39,6 @@ function checkRateLimit(clientIP: string): {
   const clientData = rateLimitStore.get(clientIP);
 
   if (!clientData || now > clientData.resetTime) {
-    // First request or window expired
     rateLimitStore.set(clientIP, {
       count: 1,
       resetTime: now + RATE_LIMIT_WINDOW,
@@ -52,7 +50,6 @@ function checkRateLimit(clientIP: string): {
     return { allowed: false, remaining: 0 };
   }
 
-  // Increment count
   clientData.count++;
   rateLimitStore.set(clientIP, clientData);
 
@@ -60,67 +57,6 @@ function checkRateLimit(clientIP: string): {
     allowed: true,
     remaining: RATE_LIMIT_MAX_REQUESTS - clientData.count,
   };
-}
-
-async function sendToTelegram(data: {
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-}): Promise<boolean> {
-  const telegramToken = process.env.TELEGRAM_BOT_TOKEN;
-  const telegramChatId = process.env.TELEGRAM_CHAT_ID;
-
-  if (!telegramToken) {
-    console.error('TELEGRAM_BOT_TOKEN not configured');
-    return false;
-  }
-
-  if (!telegramChatId) {
-    console.error('TELEGRAM_CHAT_ID not configured');
-    return false;
-  }
-
-  const message = `
-🔔 *New Contact Form Submission*
-
-👤 *Name:* ${data.name.trim()}
-📧 *Email:* ${data.email.trim()}
-📱 *Phone:* ${data.phone.trim()}
-
-💬 *Message:*
-${data.message.trim()}
-
-⏰ *Submitted:* ${new Date().toISOString()}
-📍 *Timezone:* ${Intl.DateTimeFormat().resolvedOptions().timeZone}
-  `.trim();
-
-  try {
-    const telegramUrl = `https://api.telegram.org/bot${telegramToken}/sendMessage`;
-
-    const response = await fetch(telegramUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        chat_id: telegramChatId,
-        text: message,
-        parse_mode: 'Markdown',
-      }),
-    });
-
-    if (response.ok) {
-      return true;
-    } else {
-      const errorText = await response.text();
-      console.error('Failed to send to Telegram:', errorText);
-      return false;
-    }
-  } catch (error) {
-    console.error('Error sending to Telegram:', error);
-    return false;
-  }
 }
 
 export async function POST(request: NextRequest) {
@@ -148,14 +84,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const validatedData = contactSchema.parse(body);
 
-    const telegramSent = await sendToTelegram(validatedData);
-
-    if (!telegramSent) {
-      return NextResponse.json(
-        { error: 'Failed to send message. Please try again.' },
-        { status: 500 },
-      );
-    }
+    console.log('Contact form received:', validatedData);
 
     return NextResponse.json(
       {

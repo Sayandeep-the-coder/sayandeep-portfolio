@@ -32,7 +32,6 @@ This website showcases my software engineering journey, full-stack web applicati
 - 📝 **MDX Case Studies & Tech Blog**: Dynamic routing for detailed project case studies and technical articles.
 - 🔄 **Automated GitHub Projects Sync**: Custom sync script (`scripts/fetch-github-projects.mjs`) pulling my latest public repositories and repository metadata.
 - 🤖 **Interactive AI Assistant**: Embedded AI chat assistant powered by Google Gemini API.
-- 📬 **Telegram Contact Gateway**: Serverless contact form delivering visitor messages directly to my Telegram bot.
 - 🔍 **SEO & Metadata**: Optimized meta tags, OpenGraph previews, and semantic markup for search engines and social platforms.
 
 ---
@@ -46,7 +45,6 @@ This website showcases my software engineering journey, full-stack web applicati
 | **Styling** | [Tailwind CSS](https://tailwindcss.com/), [Shadcn UI](https://ui.shadcn.com/), [Radix UI](https://www.radix-ui.com/) |
 | **Animations & UI** | [Framer Motion](https://motion.dev/), [Lenis](https://lenis.darkroom.engineering/) Smooth Scroll |
 | **Content** | [MDX](https://mdxjs.com/), [Gray-Matter](https://github.com/jonschlinkert/gray-matter) |
-| **Integrations** | [Google Gemini API](https://ai.google.dev/), Telegram Bot API, [Cal.com](https://cal.com/) |
 | **Icons** | [Phosphor Icons](https://phosphoricons.com/), [Lucide React](https://lucide.dev/) |
 
 ---
@@ -91,8 +89,6 @@ npm install
 Create a `.env` file based on `.env.example`:
 
 ```env
-TELEGRAM_BOT_TOKEN="your-telegram-bot-token"
-TELEGRAM_CHAT_ID="your-telegram-chat-id"
 GEMINI_API_KEY="your-gemini-api-key"
 NODE_ENV="development"
 NEXT_PUBLIC_URL="http://localhost:3000"
