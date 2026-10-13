@@ -6,7 +6,7 @@
  * all derive from this map automatically, so the rest of the app stays type-safe
  * and the taxonomy scales without touching the hook.
  *
- * Umami's `track(name, data)` only accepts flat primitive values, so every
+ * Event payloads only accepts flat primitive values, so every
  * shape below must stay flat (string | number | boolean).
  */
 export type AnalyticsEventData = {

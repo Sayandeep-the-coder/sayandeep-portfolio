@@ -61,9 +61,9 @@ export default function CTA({
     }
     trackEvent({
       name: 'button_click',
-      data: { buttonId: 'book_meeting', section: 'cta', action: linkText },
+      data: { buttonId: 'get_in_touch', section: 'cta', action: linkText },
     });
-    setShowCalPopup(true);
+    window.location.href = 'mailto:jitsaha951@gmail.com';
   };
 
   return (
@@ -80,7 +80,8 @@ export default function CTA({
             {preText}
           </p>
           <div className="mt-4 flex w-full justify-center sm:mt-0 sm:w-auto sm:justify-end">
-            <motion.div
+            <motion.a
+              href="mailto:jitsaha951@gmail.com"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="group inline-flex cursor-pointer items-center self-end rounded-md border border-dashed border-black/20 bg-black/5 px-2 py-1 text-sm text-black shadow-[0_0_5px_rgba(0,0,0,0.1)] transition-all dark:border-white/30 dark:bg-white/15 dark:text-white dark:shadow-[0_0_5px_rgba(255,255,255,0.1)]"
@@ -121,7 +122,7 @@ export default function CTA({
                   {linkText}
                 </span>
               </div>
-            </motion.div>
+            </motion.a>
           </div>
         </motion.div>
       </Container>

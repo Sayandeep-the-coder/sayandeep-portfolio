@@ -33,7 +33,6 @@ This website showcases my software engineering journey, full-stack web applicati
 - 🔄 **Automated GitHub Projects Sync**: Custom sync script (`scripts/fetch-github-projects.mjs`) pulling my latest public repositories and repository metadata.
 - 🤖 **Interactive AI Assistant**: Embedded AI chat assistant powered by Google Gemini API.
 - 📬 **Telegram Contact Gateway**: Serverless contact form delivering visitor messages directly to my Telegram bot.
-- 📊 **Privacy-Friendly Analytics**: Integration with Umami for lightweight, privacy-focused traffic analytics.
 - 🔍 **SEO & Metadata**: Optimized meta tags, OpenGraph previews, and semantic markup for search engines and social platforms.
 
 ---
@@ -49,7 +48,6 @@ This website showcases my software engineering journey, full-stack web applicati
 | **Content** | [MDX](https://mdxjs.com/), [Gray-Matter](https://github.com/jonschlinkert/gray-matter) |
 | **Integrations** | [Google Gemini API](https://ai.google.dev/), Telegram Bot API, [Cal.com](https://cal.com/) |
 | **Icons** | [Phosphor Icons](https://phosphoricons.com/), [Lucide React](https://lucide.dev/) |
-| **Analytics** | [Umami](https://umami.is/) |
 
 ---
 
@@ -98,8 +96,6 @@ TELEGRAM_CHAT_ID="your-telegram-chat-id"
 GEMINI_API_KEY="your-gemini-api-key"
 NODE_ENV="development"
 NEXT_PUBLIC_URL="http://localhost:3000"
-NEXT_PUBLIC_UMAMI_SRC="your-umami-script-url"
-NEXT_PUBLIC_UMAMI_ID="your-umami-website-id"
 ```
 
 ### 3. Run Development Server

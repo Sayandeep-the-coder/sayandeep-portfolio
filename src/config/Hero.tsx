@@ -89,7 +89,7 @@ export const heroConfig = {
     {
       variant: 'default',
       text: 'Get in touch',
-      href: '/contact',
+      href: 'mailto:jitsaha951@gmail.com',
       icon: 'Chat',
     },
   ],

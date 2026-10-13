@@ -182,9 +182,13 @@ export default function Hero() {
           {buttons.map((button, index) => {
             const IconComponent =
               buttonIcons[button.icon as keyof typeof buttonIcons];
+            const isExternalOrMail =
+              button.href.startsWith('mailto:') ||
+              button.href.startsWith('http');
             return (
               <Button
                 key={index}
+                asChild
                 variant={button.variant as 'outline' | 'default'}
                 className={cn(
                   'w-full sm:w-auto justify-center',
@@ -196,8 +200,17 @@ export default function Hero() {
                   data: { buttonId: button.text, section: 'hero' },
                 }}
               >
-                {IconComponent && <IconComponent />}
-                <Link href={button.href}>{button.text}</Link>
+                {isExternalOrMail ? (
+                  <a href={button.href} className="inline-flex items-center gap-2">
+                    {IconComponent && <IconComponent />}
+                    <span>{button.text}</span>
+                  </a>
+                ) : (
+                  <Link href={button.href} className="inline-flex items-center gap-2">
+                    {IconComponent && <IconComponent />}
+                    <span>{button.text}</span>
+                  </Link>
+                )}
               </Button>
             );
           })}
